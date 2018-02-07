@@ -48,7 +48,7 @@ public class Buzon
     public String amosaPrimerNonLeido(){ // amosar primer correo non lido e marcalo como lido 
         String mensaxe=null;
         for(int i=0;i<correos.size();i++){
-            if(correos.get(i).getLido()==true){
+            if(correos.get(i).getLido()==false){
                 mensaxe=correos.get(i).getContido();
                 correos.get(i).setLido(true);
             }
@@ -58,11 +58,11 @@ public class Buzon
     public String amosa(int k) // amosar o correo con subindice k
     {
         String mensaxe;
-        mensaxe=correos.get(k).getContido();
+        mensaxe=correos.get(k-1).getContido();
         return mensaxe;
     }
     public void elimina(int k) // elimina o correo con subindice k
     {
-        correos.remove(k);
+        correos.remove(k-1);
     }
 }
